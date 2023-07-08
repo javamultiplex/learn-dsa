@@ -2,22 +2,22 @@
 using namespace std;
 int main()
 {
-    vector<int> arr{0, 1, 1, 0, 1, 1, 0, 1};
-    int start = 0;
-    int end = arr.size() - 1;
-    int i = 0;
-    while (i != end)
+    vector<int> arr{0, 1, 1, 0, 0, 1, 0, 0};
+    int low = 0;
+    int high = arr.size() - 1;
+    while (low < high)
     {
-        if (arr[i] == 0)
+        if (arr[low] == 0)
         {
-            swap(arr[start], arr[i]);
-            start++;
-            i++;
+            low++;
+        }
+        else if (arr[high] == 1)
+        {
+            high--;
         }
         else
         {
-            swap(arr[end], arr[i]);
-            end--;
+            swap(arr[low], arr[high]);
         }
     }
 
